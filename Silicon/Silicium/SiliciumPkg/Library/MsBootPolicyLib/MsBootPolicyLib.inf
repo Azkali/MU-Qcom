@@ -22,6 +22,7 @@
   MsCorePkg/MsCorePkg.dec
   MdeModulePkg/MdeModulePkg.dec
   SiliciumPkg/SiliciumPkg.dec
+  droidboot_gui/droidboot.dec
 
 [LibraryClasses]
   DebugLib

@@ -74,6 +74,9 @@
   # USB Controller
   gQcomPkgTokenSpaceGuid.PcdStartUsbController|TRUE
 
+  # Droidboot
+  # gdroidbootTokenSpaceGuid.PcdDeviceTreeStore|0x83300000
+
 [PcdsDynamicDefault]
   gEfiMdeModulePkgTokenSpaceGuid.PcdVideoHorizontalResolution|2208
   gEfiMdeModulePkgTokenSpaceGuid.PcdVideoVerticalResolution|1768

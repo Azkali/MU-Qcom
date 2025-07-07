@@ -101,6 +101,10 @@ READ_LOCK_STATUS   = TRUE
 
   !include QcomPkg/Extra.fdf.inc
 
+  # Droidboot
+  !include droidboot.inc
+  #INF droidboot_platforms/uefi/common_linuxloader/kernelfdt/KernelFdtDxe.inf
+
 [FV.FVMAIN_COMPACT]
 FvAlignment        = 8
 ERASE_POLARITY     = 1

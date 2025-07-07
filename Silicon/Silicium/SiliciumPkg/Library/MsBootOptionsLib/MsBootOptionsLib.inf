@@ -27,9 +27,12 @@
   DevicePathLib
   DeviceBootManagerLib
   MsPlatformDevicesLib
+  UefiLib
+  droidbootLib
 
 [Guids]
   gMsBootPolicyFileGuid
+  gdroidbootFileGuid
 
 [Protocols]
   gEfiFirmwareVolume2ProtocolGuid

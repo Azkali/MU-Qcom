@@ -228,7 +228,8 @@ VOID
 EFIAPI
 MsBootOptionsLibRegisterDefaultBootOptions ()
 {
-  RegisterFvBootOption (&gMsBootPolicyFileGuid, L"Internal Storage", (UINTN)-1, LOAD_OPTION_ACTIVE, (UINT8 *)"SSD", sizeof ("SSD"));
+  RegisterFvBootOption (&gdroidbootFileGuid, L"Droidboot GUI", (UINTN)-1, LOAD_OPTION_ACTIVE, (UINT8 *)"GUI", sizeof ("GUI"));
+  // RegisterFvBootOption (&gMsBootPolicyFileGuid, L"Internal Storage", (UINTN)-1, LOAD_OPTION_ACTIVE, (UINT8 *)"SSD", sizeof ("SSD"));
   RegisterFvBootOption (&gMsBootPolicyFileGuid, L"USB Storage",      (UINTN)-1, LOAD_OPTION_ACTIVE, (UINT8 *)"USB", sizeof ("USB"));
 }
 
@@ -244,7 +245,8 @@ MsBootOptionsLibGetDefaultOptions (OUT UINTN *OptionCount)
   ASSERT (Option != NULL);
 
   // Create Fv Boot Options
-  Status  = CreateFvBootOption (&gMsBootPolicyFileGuid, L"Internal Storage", &Option[0], LOAD_OPTION_ACTIVE, (UINT8 *)"SSD", sizeof ("SSD"));
+  // Status  = CreateFvBootOption (&gMsBootPolicyFileGuid, L"Droidboot GUI", &Option[0], LOAD_OPTION_ACTIVE, (UINT8 *)"SSD", sizeof ("SSD"));
+  Status = CreateFvBootOption (&gdroidbootFileGuid, L"Droidboot GUI", &Option[0], LOAD_OPTION_ACTIVE, (UINT8 *)"GUI", sizeof ("GUI"));
   Status |= CreateFvBootOption (&gMsBootPolicyFileGuid, L"USB Storage",      &Option[1], LOAD_OPTION_ACTIVE, (UINT8 *)"USB", sizeof ("USB"));
 
   if (EFI_ERROR (Status)) {

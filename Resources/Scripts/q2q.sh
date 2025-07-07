@@ -19,5 +19,5 @@ python3 ./Resources/Scripts/mkbootimg.py \
   ||_error "\nFailed to create Android Boot Image!\n"
 
 # Compress Boot Image in a tar File for Odin/heimdall Flash
-tar -c boot.img -f Mu-q2q.tar||exit 1
-mv boot.img Mu-q2q.img||exit 1
+tar -c boot.img -f Mu-q2q.tar || exit 1
+mv boot.img Mu-q2q.img || exit 1

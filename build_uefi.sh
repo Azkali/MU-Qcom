@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 # Help Message Function
 function _help(){

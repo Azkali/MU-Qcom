@@ -19,7 +19,7 @@ function _error(){ echo -e "\033[1;31m${@}\033[0m" >&2;exit 1; }
 function _warn(){ echo -e "\033[0;33m${@}\033[0m" >&2;exit 1; }
 
 # Check if any args were given
-OPTS="$(getopt -o p:hfacACDO: -l package-manager:,help -n 'setup_env.sh' -- "$@")"||exit 1
+OPTS="$(getopt -o p:hfacACDO: -l package-manager:,help -n 'setup_env.sh' -- "$@" || exit 1)"
 eval set -- "${OPTS}"
 while true
 do  case "${1}" in
@@ -51,10 +51,10 @@ elif [ ${PAK} = pacman ] || [ ${PAK} = yay ]; then
     fi
     yay -Sy git mono base-devel nuget uuid lld nasm aarch64-linux-gnu-gcc python3 python python-distutils-extra python-pip gettext gnupg ca-certificates python-virtualenv python-pipenv clang llvm curl lld||_error "\nFailed to install Packages!\n"
 else
-    _error "\nInvaild Package Manager!\nAvailbe Package Managers: apt, dnf, pacman and yay\n"
+    _error "\nInvaild Package Manager!\nAvailable Package Managers: apt, dnf, pacman and yay\n"
 fi
 
 # Install Needed Python Packages
-python3 -m pip install -r pip-requirements.txt ||python3 -m pip install -r pip-requirements.txt --break-system-packages||_error "\nFailed to install Pip Packages!\n"
+python3 -m pip install -r pip-requirements.txt ||python3 -m pip install -r pip-requirements.txt --break-system-packages || _error "\nFailed to install Pip Packages!\n"
 
 export CLANGPDB_AARCH64_PREFIX=aarch64-linux-gnu-
